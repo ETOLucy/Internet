@@ -31,7 +31,8 @@ urlpatterns = [
     path('liushuideng/', views.liushuideng),
     path('img/', views.img),
     path('button/', views.button),
-    path('text/', views.text)
+    path('text/', views.text),
+    path('store/', views.store),
 ]
 
 # 在开发环境中，添加静态文件URL配置

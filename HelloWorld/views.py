@@ -21,3 +21,5 @@ def button(request):
     return render(request, "button.html")
 def text(request):
     return render(request, "text.html")
+def store(request):
+    return render(request, "store.html")

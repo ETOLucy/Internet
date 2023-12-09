@@ -10,11 +10,15 @@
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.11/dist/js/uikit-icons.min.js"></script>
 {% load static %}
 <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" />
+<link rel="icon" href="{% static 'images/UAV.svg'%}" type="image/x-icon">
 
 
 <div class="container">
   <header>
-    <img src="{% static 'images/logo.svg' %}"/>
+    <a href="../index">
+      <img src="{% static 'images/logo.svg' %}"/>
+    </a>
+    
 
     <nav>
         <ul>
@@ -22,7 +26,7 @@
             <a href="">首页</a>
           </li>
           <li>
-            <a href="">商城</a>
+            <a href="../store">商城</a>
           </li>
 
           <li id="person">
