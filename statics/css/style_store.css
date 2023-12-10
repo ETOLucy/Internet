@@ -13,6 +13,7 @@
   grid-template-rows: 120px 1fr 120px;
 }
 
+
 header,
 main,
 footer {
@@ -24,6 +25,7 @@ header {
   grid-template-columns: max-content 1fr;
   align-items: center;
   z-index: 0;
+  padding-bottom: 0px;
 }
 
 nav {
@@ -165,9 +167,6 @@ li a:hover .svg-icon {
 header img {
     z-index: 25;
 }
-
-
-
 
 
 
