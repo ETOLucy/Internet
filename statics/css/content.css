@@ -24,7 +24,7 @@ img {
   section{
     display: grid;
     justify-items: center;
-    /* amax-width: 1290px; */
+    /* max-width: 1290px; */
     max-height:3000px;
     padding: 0 80 ;
   }
