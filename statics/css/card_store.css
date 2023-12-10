@@ -72,6 +72,14 @@
     font-weight: 700;
   }
   
+  .backSide a {
+    text-decoration: none;
+  }
+
+  .backSide a :hover {
+    text-decoration: none;
+  }
+
   .frontSide,
   .frontSide::before {
     background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
