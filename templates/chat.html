@@ -95,13 +95,13 @@
               </div>
           </ion-content>
       
-          <form name="sendMessageForm" ng-submit="sendMessage(sendMessageForm)"  novalidate>
-              <ion-footer-bar class="bar-stable item-input-inset message-footer" style="background-color: #1e1e1e ;" keyboard-attach>
-                  <label class="item-input-wrapper" style="background-color: #292929 !important">
-                      <textarea ng-model="input.message" value="" placeholder="Send {{toUser.username}} a message..." required minlength="1" maxlength="1500" style="background-color: #292929 !important" msd-elastic></textarea>
+          <form name="sendMessageForm" ng-submit="sendMessage(sendMessageForm)" style="z-index: 1 !important;"  novalidate>
+              <ion-footer-bar class="bar-stable item-input-inset message-footer" style="background-color: #1e1e1e ; z-index: 1 !important;" keyboard-attach>
+                  <label class="item-input-wrapper" style="background-color: #292929 !important; z-index: 1 !important;">
+                      <textarea ng-model="input.message" value="" placeholder="Send {{toUser.username}} a message..." required minlength="1" maxlength="1500" style="background-color: #292929 !important; z-index: 1 !important; " msd-elastic></textarea>
                   </label>
-                  <div class="footer-btn-wrap" >
-                    <button class="button button-icon icon ion-android-send footer-btn" type="submit"
+                  <div class="footer-btn-wrap" style="z-index: 1 !important;" >
+                    <button class="button button-icon icon ion-android-send footer-btn" style="z-index: 1000 !important;" type="submit"
                     style="background-color: #71758d;"
                         ng-disabled="!input.message || input.message === ''">
                     </button>

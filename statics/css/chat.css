@@ -225,8 +225,14 @@ button.button-icon, .ion-android-send {
   margin-left: 2px;
   width: 100%;
   transform: scale(0.8);
+  z-index: 1000 !important;
+  background-color: rgba(7, 193, 96, 1) !important; /* 红色，完全不透明 */
 }
 
 button.button-icon {
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
   border-radius: 5px;
 }
+
+
