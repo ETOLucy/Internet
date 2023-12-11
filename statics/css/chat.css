@@ -226,3 +226,7 @@ button.button-icon, .ion-android-send {
   width: 100%;
   transform: scale(0.8);
 }
+
+button.button-icon {
+  border-radius: 5px;
+}
