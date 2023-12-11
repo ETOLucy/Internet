@@ -11,6 +11,7 @@
 }
 </style>
 ```  
+
 ## 使用 "viewport" `<meta>` 标记来控制视口的大小和形状，在index.html中添加:
 `<meta name="viewport" content="width=device-width, initial-scale=1">`  
 如果移动屏幕的宽度为 640px，则页面可能会使用 980px 的虚拟视口渲染，然后页面将缩小以适应 640px 的空间
