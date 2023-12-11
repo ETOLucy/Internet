@@ -65,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.static', #浏览器强制加载
             ],
             "libraries":{                          # 添加这边三行配置
                 'my_tags':'templatetags.my_tags'   # 添加这边三行配置        

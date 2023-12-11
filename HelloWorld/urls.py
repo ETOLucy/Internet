@@ -21,9 +21,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('index/', views.index),
     path('admin/',admin.site.urls),
     path('', views.login),
-    path('index/', views.index),
     path('runoob/', views.runoob),
     path('login/', views.login),
     path('testdb/', testdb.testdb),
@@ -34,7 +34,10 @@ urlpatterns = [
     path('img/', views.img),
     path('button/', views.button),
     path('text/', views.text),
+    path('store/', views.store),
     path('User/',include('User.urls')),
+    path('chat/',views.chat),
+    path('profile/', views.profile),
 ]
 
 # 在开发环境中，添加静态文件URL配置

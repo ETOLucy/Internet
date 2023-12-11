@@ -4,7 +4,7 @@ def runoob(request):
     views_list = ["菜鸟教程","菜鸟教程1","菜鸟教程2","菜鸟教程3",]
     return render(request, "runoob.html")
 def login(request):
-    return render(request, "User/login.html")
+    return render(request, "login.html")
 def index(request):
     return render(request, "index.html")
 def draft(request):
@@ -21,5 +21,11 @@ def button(request):
     return render(request, "button.html")
 def text(request):
     return render(request, "text.html")
+def store(request):
+    return render(request, "store.html")
+def chat(request):
+    return render(request,"chat.html")
+def profile(request):
+    return render(request, "profile.html")
 def register(request):
     return render(request, "User/register.html")
