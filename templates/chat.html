@@ -16,11 +16,11 @@
     
     <link rel="stylesheet" href="{% static 'css/chat.css' %}"/>
   </head>
-  <body ng-app="elastichat">
+  <body ng-app="elastichat" >
     <ion-nav-bar class="bar-positive" no-tap-scroll="false" >
-      <ion-nav-back-button class="button-icon ion-arrow-left-c">
+      <ion-nav-back-button class="button-icon ion-arrow-left-c" >
       </ion-nav-back-button>
-    </ion-nav-bar>
+    </ion-nav-bar >
     <!-- 
       The views will be rendered in the <ion-nav-view> directive below
       Templates are in the /templates folder (but you could also
@@ -30,7 +30,7 @@
     <script id="templates/UserMessages.html" type="text/ng-template" >
       <ion-view id="userMessagesView"
           cache-view ="false" 
-          view-title="<i class='icon ion-chatbubble user-messages-top-icon'></i> <div class='msg-header-username'>{{toUser.username|default:'DefaultUsername'}}</div>">
+          view-title="<i class='icon ion-chatbubble user-messages-top-icon'></i> <div class='msg-header-username'>{{toUser.username|default:'DefaultUsername'}}</div>" >
         
         <div class="loader-center" ng-if="!doneLoading" >
             <div class="loader">
@@ -64,7 +64,7 @@
                       </div>
                   </div>
       
-                  <div ng-if="user._id === message.userId">
+                  <div ng-if="user._id === message.userId" >
                     
                        <img ng-click="viewProfile(message)" class="profile-pic right" 
                           ng-src="{{user.pic}}" onerror="onProfilePicError(this)" />
@@ -91,8 +91,8 @@
       
           <form name="sendMessageForm" ng-submit="sendMessage(sendMessageForm)" novalidate>
               <ion-footer-bar class="bar-stable item-input-inset message-footer" style="background-color: #1e1e1e ;" keyboard-attach>
-                  <label class="item-input-wrapper">
-                      <textarea ng-model="input.message" value="" placeholder="Send {{toUser.username}} a message..." required minlength="1" maxlength="1500" msd-elastic></textarea>
+                  <label class="item-input-wrapper" style="background-color: #292929">
+                      <textarea ng-model="input.message" value="" placeholder="Send {{toUser.username}} a message..." required minlength="1" maxlength="1500" style="background-color: #292929" msd-elastic></textarea>
                   </label>
                   <div class="footer-btn-wrap" >
                     <button class="button button-icon icon ion-android-send footer-btn" type="submit"
