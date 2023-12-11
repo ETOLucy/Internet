@@ -23,3 +23,5 @@ def text(request):
     return render(request, "text.html")
 def store(request):
     return render(request, "store.html")
+def chat(request):
+    return render(request,"chat.html")
