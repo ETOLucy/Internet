@@ -17,7 +17,8 @@ button {
 }
 
 body {
-    height: 100vh;
+    min-height: 130vh;
+    height: 100%;
     background: linear-gradient(#141e30, #243b55);
     display: flex;
     justify-content: center;
@@ -27,10 +28,12 @@ body {
 }
 
 .loginBox {
+    position: absolute;
+    top: -50px;
     width: 400px;
     height: 570px;
     background-color: #0c1622;
-    margin: 100px auto;
+    margin: 200px auto;
     border-radius: 10px;
     box-shadow: 0 15px 25px 0 rgba(0, 0, 0, .6);
     padding: 40px;
@@ -178,17 +181,21 @@ h2 {
 
 .login{
 	position: absolute;
-	top: 50px;
-	right: 100px;
+	top: -150px;
+	right: -280px;
 }
 
 .tip{
 	position: absolute;
-	top: 87px;
-	right: 216px;
+	top: -115px;
+	right: -185px;
 }
 
 .messages{
     padding: 10px;
     margin-top: 10px;
+}
+
+@media screen and (max-width: 512px) {
+    
 }
