@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品详情</title>
+    {% load static %}
+
+    <link rel="icon" href="{% static 'images/UAV.svg'%}" type="image/x-icon">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/gooddetail.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="back">
+            <button class="btn"><a href="../store">Back To Store</a>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="product-image">
+            <img src="{% static 'images/UAV.svg' %}" alt="小logo" class="product-logo">
+            <img src="{% static 'images/exp1.svg' %}" alt="此处放置商品图片" class="product-pic">
+            <div class="dots">
+                <a href="#!" class="active"><i>1</i></a>
+                <a href="#!"><i>2</i></a>
+                <a href="#!"><i>3</i></a>
+                <a href="#!"><i>4</i></a>
+            </div>
+        </div>
+
+        <div class="product-details">
+            <header>
+                <h1 class="title">产品名称</h1>
+                <span class="colorCat">款式</span>
+                <div class="price">
+                    <span class="before">$15/h</span>
+                    <span class="current">$14.99/h</span>
+                </div>
+                <div class="rate">
+                    <a href="#!" class="active">★</a>
+                    <a href="#!" class="active">★</a>
+                    <a href="#!" class="active">★</a>
+                    <a href="#!">★</a>
+                    <a href="#!">★</a>
+                </div>
+            </header>
+            <article>
+                <h4>参数及性能介绍</h4>
+                <p>哈苏相机 | 1 英寸 CMOS 2000 万像素 | 可调光圈 | 10-bit Dlog-M 色彩模式 | 10-bit HDR 视频 | 移动延时摄影 | 8 公里 1080p 图传 | 持久续航
+                </p>
+                <h4>适用场景</h4>
+                <p>专业摄影、影视专业</p>
+            </article>
+            <div class="controls">
+                <div class="color">
+                    <h5>color</h5>
+                    <ul>
+                        <li><a href="#!" class="colors color-bdot1 active"></a></li>
+                        <li><a href="#!" class="colors color-bdot2"></a></li>
+                        <li><a href="#!" class="colors color-bdot3"></a></li>
+                        <li><a href="#!" class="colors color-bdot4"></a></li>
+                        <li><a href="#!" class="colors color-bdot5"></a></li>
+                    </ul>
+                </div>
+                <div class="size">
+                    <h5>Battery capacity</h5>
+                    <a href="#!" class="option">(1000 mAh)</a>
+                </div>
+                <div class="qty">
+                    <h5>qty</h5>
+                    <a href="#!" class="option">(1)</a>
+                </div>
+            </div>
+            <div class="footer">
+                <button type="button">
+                    <img src="{% static 'images/buy.svg' %}" alt="">
+                    <span>Rent Now!</span>
+                </button>
+                <a href="#!"><img src="http://co0kie.github.io/codepen/nike-product-page/share.png" alt=""></a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

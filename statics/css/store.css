@@ -1,0 +1,50 @@
+.icon-img img{
+    height: 40px;
+    width: 40px;
+}
+
+.icon-img a{
+    color: rgb(4, 200, 200);
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.top span{
+    width: 40px;
+}
+.top p{
+    margin: 0;
+    font-size: 21px;
+    font-weight: bolder;
+}
+
+.txt{
+    padding: 17px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.txt h4{
+    margin-top: 10px;
+    margin-bottom: 16px;
+    font-size: 21px;
+    font-weight: 550;
+    color: aqua;
+}
+.txt p{
+    line-height: 28px;
+}
+
+.explain{
+    font-weight: 100;
+}
+.ps{
+    margin-top: 15px;
+    margin-right: 23px;
+    margin-bottom: 10px;
+    color: rgb(169, 163, 163);
+    text-align: right;
+    margin: 0;
+}

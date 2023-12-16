@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>注册</title>
+	{% load static %}
+	<link type="text/css" rel="stylesheet" href="{% static 'css/register.css' %}">
+	<link rel="icon" href="{% static 'images/UAV.svg'%}" type="image/x-icon">
+</head>
+
+<body>
+  
+	<div class="loginBox custom-card">
+		<h2>register</h2>
+		<form action="" method="post">
+            {% csrf_token %}
+			<div class="item">
+				<input type="text" required name="username">
+				<label for="">userName</label>
+			</div>
+			<div class="item">
+				<input type="password" required name="password">
+				<label for="">password</label>
+			</div>
+            <div class="item">
+				<input type="password" required name="repassword">
+				<label for="">repassword</label>
+			</div>
+            <div class="item">
+				<input type="phone" required name="phone">
+				<label for="">phone</label>
+			</div>
+			<button class="btn">submit
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</form>
+		<div class="tip">
+			<p>已有账号？&emsp;点击这里立即登录！&emsp;——></p>
+		</div>
+		<div class="login">
+			<button class="btn"><a href="{% url 'user:login' %}">login</a>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</div>
+		{% if messages %}
+		<ul class="messages">
+			{% for message in messages %}
+			<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+	</div>
+	<!-- {% if messages %}
+	<script>
+		{% for message in messages %}
+		alert('{{ message|safe }}');
+		{% endfor %}
+	</script>
+	{% endif %} -->
+</body>
+
+</html>
