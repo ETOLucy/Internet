@@ -35,6 +35,7 @@ urlpatterns = [
     path('store/', views.store),
     path('chat/',views.chat),
     path('profile/', views.profile),
+    
 ]
 
 # 在开发环境中，添加静态文件URL配置

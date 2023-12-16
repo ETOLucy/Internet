@@ -114,16 +114,17 @@
   }
   
   /* 图标 */
-  .feature i.fas {
+  .feature i.fa {
     grid-area: icon;
     font-size: 34px;
     color: var(--primary-color);
   }
-  .col-1 i.fas{
+  .col-1 i.fa{
     grid-area: icon;
     font-size: 34px;
     color: var(--primary-color);
   }
+
   /* 标题 */
   .feature-title {
     grid-area: title;
@@ -151,9 +152,22 @@
     text-rendering: auto;
     line-height: 1;
 }
-.fa-lightbulb:before {
-    content: "\f0eb";
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .intro {
     margin: 12px 0 60px 0;
     font-size: 18px;
@@ -256,28 +270,18 @@ p {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.cyan-text:before {
-  content: "\f1d8";
-}
-.cyan-text {
-  color: #00bcd4 !important;
-  grid-row: 1;
-  grid-row-gap: 10px
-}
+
 .special{
   margin-bottom: 20px;
 }
-.gamepad-modern:before {
-  content: "\f03d";
-}
-.gamepad-modern{
+.fa-paper-plane{
   color: #a5c533 !important;
 }
-.cc-visa:before {
-  content: "\f218";
+.fa-gamepad{
+  color: #431c83 !important;
 }
-.cc-visa{
-  color: #ad49c1 !important;
+.fa-codiepie{
+  color: #743014 !important;
 }
 .col-lg-6 i.fa {
   grid-area: icon;
