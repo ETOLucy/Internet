@@ -1,5 +1,5 @@
 from django.shortcuts import render,HttpResponse
-
+from Drone.models import Drone
 def runoob(request):
     views_list = ["菜鸟教程","菜鸟教程1","菜鸟教程2","菜鸟教程3",]
     return render(request, "runoob.html")
@@ -31,3 +31,13 @@ def gooddetail(request):
     return render(request,"gooddetail.html")
 def register(request):
     return render(request, "User/register.html")
+def Welcome(request):
+    return render(request, "Welcome.html")
+def store(request):
+    drones = Drone.objects.all()
+    return render(request, 'store.html', {'drones': drones})
+
+def Welcome(request):
+    Drone.objects.filter(name='bg')
+    img = Drone.objects.all()
+    return render(request, 'Welcome.html',{'img':img})

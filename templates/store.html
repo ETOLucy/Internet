@@ -29,31 +29,34 @@
   </header>
   <main>
     <div class="container_cus">
-      <div class="myCard">
-        <div class="innerCard">
-          <div class="frontSide">
+      {% for drone in drones %}
+        <div class="myCard">
+          <div class="innerCard">
+            <div class="frontSide">
 
-            <div class="txt">
-              <h4>航拍无人机</h4>
-              <div class="top">
-                <span></span><p class="tag">摄影</p><span></span>
-                <img src="{% static 'images/摄影.svg' %}">
+              <div class="txt">
+                <h4>{{ drone.name }}</h4>
+                <div class="top">
+                  <span></span><p class="tag">{{ drone.category }}</p><span></span>
+                  
+                  <img src="{% static 'images/摄影.svg' %}">
+                </div>
+                <p class="explain">{{ drone.explain }}</p>
+                <p class="ps">{{ drone.ps }}</p>
               </div>
-              <p class="explain">突破天际，航拍无人机，捕捉世界魅力。高空俯瞰，每一帧都是独特的故事，留下美丽的视角。</p>
-              <p class="ps">$15&thinsp;起</p>
+            </div>
+            <div class="backSide">
+              <p class="title">{{ drone.title1 }}</p>
+              <p class="title">{{ drone.title2 }}</p>
+              <a href="../gooddetail">Read more</a>
             </div>
           </div>
-          <div class="backSide">
-            <p class="title">摄影是诉说生活</p>
-            <p class="title">追逐美好的灵魂之旅</p>
-            <a href="../gooddetail">Read more</a>
-          </div>
         </div>
-      </div>
+      {% endfor %}
       <div class="myCard">
         <div class="innerCard">
           <div class="frontSide">
-            <p class="title">FRONT SIDE</p>
+            <p class="title">{{na}}</p>
             <p>Hover Me</p>
           </div>
           <div class="backSide">

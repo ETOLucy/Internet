@@ -40,8 +40,14 @@ urlpatterns = [
     path('profile/', views.profile),
     path('gooddetail/',views.gooddetail),
     path('User/',include('User.urls')),
+    path('Drone/',include('Drone.urls',namespace='Drone')),
+    path('Welcome/',views.Welcome),
 ]
 
 # 在开发环境中，添加静态文件URL配置
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+
+    

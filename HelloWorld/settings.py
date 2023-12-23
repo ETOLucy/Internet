@@ -67,6 +67,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.static', #浏览器强制加载
+                'django.template.context_processors.media',
             ],
             "libraries":{                          # 添加这边三行配置
                 'my_tags':'templatetags.my_tags'   # 添加这边三行配置        
@@ -77,6 +78,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'HelloWorld.wsgi.application'
 
+# media
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
