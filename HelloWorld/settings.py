@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'TestModel',               # 添加此项
     'django_extensions',
-    'User'
+    'User',
+    'Drone',
 ]
 
 MIDDLEWARE = [
