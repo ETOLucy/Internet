@@ -36,6 +36,7 @@ urlpatterns = [
     path('button/', views.button),
     path('text/', views.text),
     path('store/', views.store),
+    path('filter/', views.store_filter, name='store_filter'),
     path('chat/',views.chat),
     path('profile/', views.profile),
     path('gooddetail/',views.gooddetail),

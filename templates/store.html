@@ -22,9 +22,10 @@
     </a>
 
     <nav class="icon-img">
-        <a>表演</a>
-        <a>农业</a>
-        <a>摄影</a>
+      <a href="{% url 'store_filter' %}">全部</a>
+      <a href="{% url 'store_filter' %}?category=表演">表演</a>
+      <a href="{% url 'store_filter' %}?category=农业">农业</a>
+      <a href="{% url 'store_filter' %}?category=摄影">摄影</a>
     </nav>
   </header>
   <main>
@@ -52,7 +53,8 @@
             </div>
           </div>
         </div>
-      {% endfor %}
+       {% endfor %}
+       <!--
       <div class="myCard">
         <div class="innerCard">
           <div class="frontSide">
@@ -143,7 +145,7 @@
             <a>Read more</a>
           </div>
         </div>
-      </div>
+      </div> -->
 
        
     </div>

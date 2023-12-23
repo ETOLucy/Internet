@@ -23,6 +23,17 @@ def text(request):
     return render(request, "text.html")
 def store(request):
     return render(request, "store.html")
+def store(request):
+    drones = Drone.objects.all()
+    return render(request, 'store.html', {'drones': drones})
+
+def store_filter(request):
+    category = request.GET.get('category', '')
+    if category == '':
+        drones_filter = Drone.objects.all()
+    else:
+        drones_filter = Drone.objects.filter(category=category)
+    return render(request, 'store.html', {'drones': drones_filter})
 def chat(request):
     return render(request,"chat.html")
 def profile(request):
@@ -33,9 +44,7 @@ def register(request):
     return render(request, "User/register.html")
 def Welcome(request):
     return render(request, "Welcome.html")
-def store(request):
-    drones = Drone.objects.all()
-    return render(request, 'store.html', {'drones': drones})
+
 
 def Welcome(request):
     Drone.objects.filter(name='bg')
