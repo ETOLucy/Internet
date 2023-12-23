@@ -9,6 +9,7 @@
 
     <link rel="icon" href="{% static 'images/UAV.svg'%}" type="image/x-icon">
     <link type="text/css" rel="stylesheet" href="{% static 'css/gooddetail.css' %}">
+    <script type="text/javascript" src="{% static 'js/gooddetail.js' %}" defer></script>
 </head>
 
 <body>
@@ -25,12 +26,7 @@
                 </button>
             </div>
             <img src="{% static 'images/exp1.svg' %}" alt="此处放置商品图片" class="product-pic">
-            <div class="dots">
-                <a href="#!" class="active"><i>1</i></a>
-                <a href="#!"><i>2</i></a>
-                <a href="#!"><i>3</i></a>
-                <a href="#!"><i>4</i></a>
-            </div>
+            <div class="dots"></div>
         </div>
 
         <div class="product-details">
@@ -42,11 +38,11 @@
                     <span class="current">$14.99/h</span>
                 </div>
                 <div class="rate">
-                    <a href="#!" class="active">★</a>
-                    <a href="#!" class="active">★</a>
-                    <a href="#!" class="active">★</a>
-                    <a href="#!">★</a>
-                    <a href="#!">★</a>
+                    <a href="#!" onclick="setRating(1)">★</a>
+                    <a href="#!" onclick="setRating(2)">★</a>
+                    <a href="#!" onclick="setRating(3)">★</a>
+                    <a href="#!" onclick="setRating(4)">★</a>
+                    <a href="#!" onclick="setRating(5)">★</a>
                 </div>
             </header>
             <article>
@@ -57,27 +53,46 @@
                 <p>专业摄影、影视专业</p>
             </article>
             <div class="controls">
-                <div class="color">
-                    <h5>color</h5>
-                    <ul>
-                        <li><a href="#!" class="colors color-bdot1 active"></a></li>
-                        <li><a href="#!" class="colors color-bdot2"></a></li>
-                        <li><a href="#!" class="colors color-bdot3"></a></li>
-                        <li><a href="#!" class="colors color-bdot4"></a></li>
-                        <li><a href="#!" class="colors color-bdot5"></a></li>
-                    </ul>
+
+                <div class="size">
+                    <h5>Battery capacity</h5>
+                    <div class="custom-dropdown">
+                        <div class="dropdown-content" id="batteryDropdown">
+                            <select>
+                                <option value="1000">1000 mAh</option>
+                                <option value="2000">2000 mAh</option>
+                                <option value="3000">3000 mAh</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="size">
                     <h5>Battery capacity</h5>
-                    <a href="#!" class="option">(1000 mAh)</a>
+                    <div class="custom-dropdown">
+                        <div class="dropdown-content" id="batteryDropdown">
+                            <select>
+                                <option value="1000">1000 mAh</option>
+                                <option value="2000">2000 mAh</option>
+                                <option value="3000">3000 mAh</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-                <div class="qty">
+                <div class="size">
                     <h5>qty</h5>
-                    <a href="#!" class="option">(1)</a>
+                    <div class="custom-dropdown">
+                        <div class="dropdown-content" id="batteryDropdown">
+                            <select>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="footer">
-                <button type="button">
+                <button type="button" id="rentNowButton">
                     <img src="{% static 'images/buy.svg' %}" alt="">
                     <span>Rent Now!</span>
                 </button>
