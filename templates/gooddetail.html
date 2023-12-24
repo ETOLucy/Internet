@@ -35,8 +35,8 @@
                 <h1 class="title">{{drone.name}}</h1>
                 <!-- <span class="colorCat">款式</span> -->
                 <div class="price">
-                    <span class="before">$15/h</span>
-                    <span class="current">$14.99/h</span>
+                    <span class="before">￥{{drone.price_before}}</span>
+                    <span class="current">￥{{drone.price_current}}</span>
                 </div>
                 <div class="rate">
                     <a href="#!" onclick="setRating(1)">★</a>
@@ -48,48 +48,47 @@
             </header>
             <article>
                 <h4>参数及性能介绍</h4>
-                <p>哈苏相机 | 1 英寸 CMOS 2000 万像素 | 可调光圈 | 10-bit Dlog-M 色彩模式 | 10-bit HDR 视频 | 移动延时摄影 | 8 公里 1080p 图传 | 持久续航
-                </p>
+                <p>{{drone.introduction}}</p>
                 <h4>适用场景</h4>
-                <p>专业摄影、影视专业</p>
+                <p>{{drone.use_case}}</p>
             </article>
             <div class="controls">
 
                 <div class="size">
-                    <h5>Battery capacity</h5>
+                    <h5>{{drone.select_1}}</h5>
                     <div class="custom-dropdown">
                         <div class="dropdown-content" id="batteryDropdown">
                             <select>
-                                <option value="1000">1000 mAh</option>
-                                <option value="2000">2000 mAh</option>
-                                <option value="3000">3000 mAh</option>
-                                <option value="4000">其他</option>
+                                <option value="1000">{{drone.op11}}</option>
+                                <option value="2000">{{drone.op12}}</option>
+                                <option value="3000">{{drone.op13}}</option>
+                                <option value="4000">{{drone.op14}}</option>
                             </select>
                         </div>
                     </div>
                 </div>
                 <div class="size">
-                    <h5>Battery capacity</h5>
+                    <h5>{{drone.select_2}}</h5>
                     <div class="custom-dropdown">
                         <div class="dropdown-content" id="batteryDropdown">
                             <select>
-                                <option value="1000">1000 mAh</option>
-                                <option value="2000">2000 mAh</option>
-                                <option value="3000">3000 mAh</option>
-                                <option value="4000">4000 mAh</option>
+                                <option value="1000">{{drone.op21}}</option>
+                                <option value="2000">{{drone.op22}}</option>
+                                <option value="3000">{{drone.op23}}</option>
+                                <option value="4000">{{drone.op24}}</option>
                             </select>
                         </div>
                     </div>
-                </div>
+                </div>                
                 <div class="size">
-                    <h5>qty</h5>
+                    <h5>{{drone.select_3}}</h5>
                     <div class="custom-dropdown">
                         <div class="dropdown-content" id="batteryDropdown">
                             <select>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">3</option>
+                                <option value="1000">{{drone.op31}}</option>
+                                <option value="2000">{{drone.op32}}</option>
+                                <option value="3000">{{drone.op33}}</option>
+                                <option value="4000">{{drone.op34}}</option>
                             </select>
                         </div>
                     </div>
