@@ -1,4 +1,4 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import get_object_or_404, render,HttpResponse
 from Drone.models import Drone
 def runoob(request):
     views_list = ["菜鸟教程","菜鸟教程1","菜鸟教程2","菜鸟教程3",]
@@ -48,6 +48,8 @@ def store_filter(request):
     else:
         return render(request, 'store.html', {'drones': drones_filter})
     
+
+
 def chat(request):
     username = request.session.get('username')
     if username:
@@ -62,10 +64,11 @@ def profile(request):
     else:
         return render(request, "profile.html")
     
-def gooddetail(request):
+def gooddetail(request, drone_id):
+    drone = get_object_or_404(Drone, pk=drone_id)
     username = request.session.get('username')
     if username:
-        return render(request, 'gooddetail.html', {'username': username})
+        return render(request, 'gooddetail.html', {'drone': drone, 'username': username})
     else:
         return render(request, "gooddetail.html")
 def register(request):

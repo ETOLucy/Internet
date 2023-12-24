@@ -13,12 +13,13 @@
 </head>
 
 <body>
+    
     <div class="container">
 
         <div class="product-image">
             <!-- <img src="{% static 'images/UAV.svg' %}" alt="小logo" class="product-logo"> -->
             <div class="back">
-                <button class="btn"><a href="../store">Back To Store</a>
+                <button class="btn"><a href="{% url 'store' %}">Back To Store</a>
                     <span></span>
                     <span></span>
                     <span></span>
@@ -31,7 +32,7 @@
 
         <div class="product-details">
             <header>
-                <h1 class="title">产品名称</h1>
+                <h1 class="title">{{drone.name}}</h1>
                 <!-- <span class="colorCat">款式</span> -->
                 <div class="price">
                     <span class="before">$15/h</span>

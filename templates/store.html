@@ -49,7 +49,7 @@
             <div class="backSide">
               <p class="title">{{ drone.title1 }}</p>
               <p class="title">{{ drone.title2 }}</p>
-              <a href="../gooddetail">Read more</a>
+              <a href="{% url 'gooddetail' drone.id %}">Read more</a>
             </div>
           </div>
         </div>
