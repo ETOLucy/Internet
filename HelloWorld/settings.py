@@ -96,7 +96,7 @@ DATABASES = {
     'default': 
     { 
         'ENGINE': 'django.db.backends.mysql',    # 数据库引擎
-        'NAME': 'runoob', # 数据库名称
+        'NAME': 'test', # 数据库名称
         'HOST': 'localhost', # 数据库地址
         'PORT': 3306, # 端口 
         'USER': 'root',  # 数据库用户名
