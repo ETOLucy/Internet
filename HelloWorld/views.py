@@ -1,5 +1,17 @@
+from django.contrib import messages
 from django.shortcuts import get_object_or_404, render,HttpResponse
 from Drone.models import Drone
+
+# 示例后端处理（使用 Django 框架）
+from django.http import HttpResponseRedirect, JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from Drone.models import Drone
+from User.models import Order, Users
+from decimal import Decimal
+import json
+
+
+
 def runoob(request):
     views_list = ["菜鸟教程","菜鸟教程1","菜鸟教程2","菜鸟教程3",]
     return render(request, "runoob.html")
@@ -67,6 +79,39 @@ def profile(request):
 def gooddetail(request, drone_id):
     drone = get_object_or_404(Drone, pk=drone_id)
     username = request.session.get('username')
+
+    
+    # if request.method == 'POST':
+    #     data = json.loads(request.body.decode('utf-8'))
+        
+    #     # 获取价格字段
+    #     price = data.get('price', None)
+    #     if username is not None:
+    #         # 获取用户对象
+    #         user = Users.objects.get(username=username)
+    #         # 检查用户余额是否足够支付
+    #         if user.balance >= price:
+    #             # 扣除用户余额
+    #             user.balance -= price
+    #             # user.save()
+    #             # # 创建订单
+    #             # order = Order.objects.create(
+    #             #     user=request.user,
+    #             #     product_id=data['productId'],
+    #             #     property1=data['property1'],
+    #             #     property2=data['property2'],
+    #             #     property3=data['property3'],
+    #             #     # 其他订单信息...
+    #             #     price=price,
+    #             # )
+    #             return JsonResponse({'status': 'success', 'message': 'Payment processed successfully'})
+            
+    #         else:
+    #             return JsonResponse({'status': 'error', 'message': '余额不足'})
+    #     else:
+    #         return JsonResponse({'status': 'error', 'message': '请先登录!'})
+
+
     if username:
         return render(request, 'gooddetail.html', {'drone': drone, 'username': username})
     else:
@@ -81,3 +126,38 @@ def Welcome(request):
     Drone.objects.filter(name='bg')
     img = Drone.objects.all()
     return render(request, 'Welcome.html',{'img':img})
+
+@csrf_exempt
+def submit_order(request):
+    if request.method == 'POST':
+        data = json.loads(request.body.decode('utf-8'))
+        
+        # 获取价格字段
+        price = data.get('price', None)
+        # 获取当前登录用户的ID
+        user_id = request.session.get('user_id', None)
+        if user_id is not None:
+            # 获取用户对象
+            user = Users.objects.get(id=user_id)
+            # 检查用户余额是否足够支付
+            if user.balance >= price:
+                # 扣除用户余额
+                user.balance -= price
+                user.save()
+                # 创建订单
+                order = Order.objects.create(
+                    user=request.user,
+                    product_id=data['productId'],
+                    property1=data['property1'],
+                    property2=data['property2'],
+                    property3=data['property3'],
+                    # 其他订单信息...
+                    price=price,
+                )
+                return JsonResponse({'status': 'success', 'message': 'Payment processed successfully'})
+            
+            else:
+                return JsonResponse({'status': 'error', 'message': '余额不足'})
+        else:
+            return JsonResponse({'status': 'error', 'message': '请先登录!'})
+    return JsonResponse({'status': 'error', 'message': '出错!'})

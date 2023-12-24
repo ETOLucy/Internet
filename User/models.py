@@ -8,6 +8,15 @@ class Users(models.Model):
     password=models.CharField(max_length=50)
     balance=models.DecimalField(max_digits=10, decimal_places=2, default=10000000.00)
 
+class Order(models.Model):
+    product_id = models.IntegerField()
+    property1 = models.CharField(max_length=255)
+    property2 = models.CharField(max_length=255)
+    property3 = models.CharField(max_length=255)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
 class Bank_card(models.Model):
     card_type = models.CharField(max_length=50)
     balance = models.DecimalField(max_digits=10, decimal_places=2, default=10000000.00)

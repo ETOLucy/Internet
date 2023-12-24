@@ -52,12 +52,16 @@
                 <h4>适用场景</h4>
                 <p>{{drone.use_case}}</p>
             </article>
+
+
+            <form  method="post" action="">
+                {% csrf_token %}
             <div class="controls">
 
                 <div class="size">
                     <h5>{{drone.select_1}}</h5>
                     <div class="custom-dropdown">
-                        <div class="dropdown-content" id="batteryDropdown">
+                        <div class="dropdown-content" id="batteryDropdown1">
                             <select>
                                 <option value="1000">{{drone.op11}}</option>
                                 <option value="2000">{{drone.op12}}</option>
@@ -70,7 +74,7 @@
                 <div class="size">
                     <h5>{{drone.select_2}}</h5>
                     <div class="custom-dropdown">
-                        <div class="dropdown-content" id="batteryDropdown">
+                        <div class="dropdown-content" id="batteryDropdown2">
                             <select>
                                 <option value="1000">{{drone.op21}}</option>
                                 <option value="2000">{{drone.op22}}</option>
@@ -81,9 +85,9 @@
                     </div>
                 </div>                
                 <div class="size">
-                    <h5>{{drone.select_3}}</h5>
+                    <h5 name="select_3">{{drone.select_3}}</h5>
                     <div class="custom-dropdown">
-                        <div class="dropdown-content" id="batteryDropdown">
+                        <div class="dropdown-content" id="batteryDropdown3">
                             <select>
                                 <option value="1000">{{drone.op31}}</option>
                                 <option value="2000">{{drone.op32}}</option>
@@ -94,6 +98,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="footer">
                 <button type="button" id="rentNowButton">
                     <img src="{% static 'images/buy.svg' %}" alt="">
@@ -102,7 +107,7 @@
                 <a href="../chat"><img src="{% static 'images/chat.svg' %}" alt=""></a>
             </div>
         </div>
-
+        </form> 
     </div>
 
 </body>

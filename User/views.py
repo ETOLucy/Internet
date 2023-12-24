@@ -5,6 +5,15 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib import messages
 from django.urls import reverse
 
+
+# 示例后端处理（使用 Django 框架）
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from Drone.models import Drone
+from User.models import Order
+from decimal import Decimal
+import json
+
 # Create your views here.
 def register(request):
     return render(request,'User/register.html')
@@ -61,3 +70,8 @@ def login(request):
         except Users.DoesNotExist:
             messages.error(request,"用户不存在，请重新登录。")
             return HttpResponseRedirect(reverse('user:login'))
+        
+
+
+
+

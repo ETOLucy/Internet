@@ -43,6 +43,7 @@ urlpatterns = [
     path('User/',include('User.urls')),
     path('Drone/',include('Drone.urls',namespace='Drone')),
     path('Welcome/',views.Welcome),
+    path('submit_order/', views.submit_order, name='submit_order'),
 ]
 
 # 在开发环境中，添加静态文件URL配置
