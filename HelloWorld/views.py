@@ -70,7 +70,7 @@ def gooddetail(request, drone_id):
     if username:
         return render(request, 'gooddetail.html', {'drone': drone, 'username': username})
     else:
-        return render(request, "gooddetail.html")
+        return render(request, "gooddetail.html", {'drone': drone, 'username': username})
 def register(request):
     return render(request, "User/register.html")
 def Welcome(request):
