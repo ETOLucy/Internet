@@ -130,34 +130,34 @@ def Welcome(request):
 @csrf_exempt
 def submit_order(request):
     if request.method == 'POST':
-        data = json.loads(request.body.decode('utf-8'))
         
+        data = json.loads(request.body.decode('utf-8'))
+        # return JsonResponse({'status': 'error', 'message': data})
         # 获取价格字段
         price = data.get('price', None)
         # 获取当前登录用户的ID
-        user_id = request.session.get('user_id', None)
-        if user_id is not None:
+        username = request.session.get('username', None)
+        if username is not None:
             # 获取用户对象
-            user = Users.objects.get(id=user_id)
+            user = Users.objects.get(username=username)
             # 检查用户余额是否足够支付
             if user.balance >= price:
                 # 扣除用户余额
                 user.balance -= price
                 user.save()
                 # 创建订单
-                order = Order.objects.create(
-                    user=request.user,
-                    product_id=data['productId'],
-                    property1=data['property1'],
-                    property2=data['property2'],
-                    property3=data['property3'],
-                    # 其他订单信息...
-                    price=price,
-                )
-                return JsonResponse({'status': 'success', 'message': 'Payment processed successfully'})
+                # order = Order.objects.create(
+                #     product_id=data['productId'],
+                #     property1=data['property1'],
+                #     property2=data['property2'],
+                #     property3=data['property3'],
+                #     # 其他订单信息...
+                #     price=price,
+                # )
+                return JsonResponse({'status': 'success', 'message': 'Payment processed successfully'+data['productId']+data['property1']})
             
             else:
                 return JsonResponse({'status': 'error', 'message': '余额不足'})
         else:
             return JsonResponse({'status': 'error', 'message': '请先登录!'})
-    return JsonResponse({'status': 'error', 'message': '出错!'})
+    return JsonResponse({'status': 'error', 'message': request.method})

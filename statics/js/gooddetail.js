@@ -33,7 +33,7 @@ rentNowButton.addEventListener('click', function () {
 
         // 获取用户选择的商品信息
         var selectedProduct = {
-            productId: "{{drone.id}}",
+            productId: document.querySelector('.product-details #drone_name').value,
             property1: document.querySelector('#batteryDropdown1 select').value,
             property2: document.querySelector('#batteryDropdown2 select').value,
             property3: document.querySelector('#batteryDropdown3 select').value,
@@ -41,12 +41,12 @@ rentNowButton.addEventListener('click', function () {
             price: currentPrice,
             // 其他商品信息...
         };
-
+        console.log(selectedProduct['productId'])
         // 发送数据到后端
         fetch('../../submit_order/', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json; charset=utf-8',
                 'X-CSRFToken': getCookie('csrftoken'),
             },
             body: JSON.stringify(selectedProduct),
@@ -55,7 +55,7 @@ rentNowButton.addEventListener('click', function () {
             .then(data => {
                 console.log('Success:', data);
                 // 在成功的回调中执行跳转或其他操作
-                window.location.href = '../profile';
+                // window.location.href = '../profile';
             })
             .catch((error) => {
                 console.error('Error:', error);

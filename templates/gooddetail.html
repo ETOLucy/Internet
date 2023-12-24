@@ -29,10 +29,11 @@
             <img src="{% static 'images/exp1.svg' %}" alt="此处放置商品图片" class="product-pic">
             <div class="dots"></div>
         </div>
-
-        <div class="product-details">
+        <form  method="post" action="/submit_order/">
+            {% csrf_token %}
+        <div class="product-details" id="pre_name">
             <header>
-                <h1 class="title">{{drone.name}}</h1>
+                <h1 class="title" id="drone_name">{{drone.name}}</h1>
                 <!-- <span class="colorCat">款式</span> -->
                 <div class="price">
                     <span class="before">￥{{drone.price_before}}</span>
@@ -54,8 +55,7 @@
             </article>
 
 
-            <form  method="post" action="">
-                {% csrf_token %}
+            
             <div class="controls">
 
                 <div class="size">
