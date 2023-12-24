@@ -1,14 +1,101 @@
 const counter = document.querySelector(".counter");
 let count = 0;
 setInterval(() => {
-	if (count == 92) {
-		clearInterval(count);
-	} else {
-		count += 1;
-		counter.textContent = count + "%";
-	}
+  if (count == 11) {
+    clearInterval(count);
+  } else {
+    count += 1;
+    counter.textContent = count + "%";
+  }
 }, 42);
 //# sourceURL=pen.js
+
+var image1 = document.getElementById('clickableImage1');
+image1.addEventListener('click', function () {
+  var imageUrl = image1.src;
+  localStorage.setItem('imageUrl', imageUrl);
+  // 使用 window.location.href 跳转到另一个页面，可以替换为你的目标页面的 URL
+  window.location.href = '../chat/#/UserMessages';
+});
+
+var image2 = document.getElementById('clickableImage2');
+image2.addEventListener('click', function () {
+  var imageUrl = image2.src;
+  localStorage.setItem('imageUrl', imageUrl);
+  // 使用 window.location.href 跳转到另一个页面，可以替换为你的目标页面的 URL
+  window.location.href = '../chat/#/UserMessages';
+});
+
+var image3 = document.getElementById('clickableImage3');
+image3.addEventListener('click', function () {
+  var imageUrl = image3.src;
+  localStorage.setItem('imageUrl', imageUrl);
+  // 使用 window.location.href 跳转到另一个页面，可以替换为你的目标页面的 URL
+  window.location.href = '../chat/#/UserMessages';
+});
+
+var gohome = document.getElementById('home');
+gohome.addEventListener('click', function () {
+  var targetPageUrl = '../../index';
+  window.location.href = targetPageUrl;
+});
+
+var shop = document.getElementById('store');
+shop.addEventListener('click', function () {
+  var targetPageUrl = '../../store';
+  window.location.href = targetPageUrl;
+});
+
+var sendmessage = document.getElementById('chat');
+sendmessage.addEventListener('click', function () {
+  var targetPageUrl = '../../chat';
+  window.location.href = targetPageUrl;
+});
+
+var rentNowButton = document.getElementById('back');
+rentNowButton.addEventListener('click', function () {
+  var targetPageUrl = '../../User/login';
+  window.location.href = targetPageUrl;
+});
+
+function getCurrentTime() {
+  var currentDate = new Date();
+
+  var daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  var monthsOfYear = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var monthsOfYear2 = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'December'];
+
+  var dayOfWeek = daysOfWeek[currentDate.getDay()];
+  var month = monthsOfYear[currentDate.getMonth()];
+  var month2 = monthsOfYear2[currentDate.getMonth()];
+  var day = currentDate.getDate();
+  var year = currentDate.getFullYear();
+
+  var hours = currentDate.getHours();
+  var minutes = currentDate.getMinutes();
+  var ampm = hours >= 12 ? 'pm' : 'am';
+
+  hours = hours % 12;
+  hours = hours ? hours : 12; // 处理午夜（0时）
+
+  // 添加前导零
+  hours = hours < 10 ? '0' + hours : hours;
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+
+  var formattedTime = dayOfWeek + ', ' + month + ' ' + day + ' ' + year;
+  var formattedTime2 = month2 + ' ' + year;
+  var formattedTime3 = hours + ':' + minutes + ' ' + ampm;
+
+  document.getElementById('currentTime').innerText = formattedTime;
+  document.getElementById('my').innerText = formattedTime2;
+  document.getElementById('detail').innerText = formattedTime3;
+}
+
+// 初始加载
+getCurrentTime();
+
+// 每秒更新一次
+setInterval(getCurrentTime, 1000);
 
 /*添加弹窗 */
 document.addEventListener("DOMContentLoaded", function() {
@@ -18,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	hidePopup();
 
 	// 点击卡片时显示弹窗
-	document.querySelector('.card')
+	document.querySelector('.container preload')
 		.addEventListener('click', function() {
 			showPopup();
 		});

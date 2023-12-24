@@ -36,7 +36,7 @@
     <script id="templates/UserMessages.html" type="text/ng-template" >
       <ion-view id="userMessagesView"
           cache-view ="false" 
-          view-title="<i class='icon ion-chatbubble user-messages-top-icon'></i> <div class='msg-header-username'>{{toUser.username|default:'DefaultUsername'}}</div>">
+          view-title="<i class='icon ion-chatbubble user-messages-top-icon'></i> <div class='msg-header-username'>{{username|default:'DefaultUsername'}}</div>">
         
         <div class="loader-center" ng-if="!doneLoading" >
             <div class="loader">
@@ -52,10 +52,8 @@
       
                   <div ng-if="user._id !== message.userId">
                       
-                    <img ng-click="viewProfile(message)" class="profile-pic left" 
-                          ng-src="{{toUser.pic}}" onerror="onProfilePicError(this)" />
-                          
-      
+                    <img ng-click="viewProfile(message)" class="profile-pic left replaceableImage" src="{% static 'images/用户1.svg' %}"  />
+                    
                       <div class="chat-bubble left">
       
                           <div class="message" ng-bind-html="message.text | nl2br" autolinker>
@@ -72,8 +70,8 @@
       
                   <div ng-if="user._id === message.userId" >
                     
-                       <img ng-click="viewProfile(message)" class="profile-pic right" 
-                          ng-src="{{user.pic}}" onerror="onProfilePicError(this)" />
+                       <img ng-click="viewProfile(message)" class="profile-pic right"
+                       src="{% static 'images/用户.svg' %}" />
                     
                       <div class="chat-bubble right">
       

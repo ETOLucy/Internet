@@ -6,7 +6,11 @@ def runoob(request):
 def login(request):
     return render(request, "User/login.html")
 def index(request):
-    return render(request, "index.html")
+    username = request.session.get('username')
+    if username:
+        return render(request, 'index.html', {'username': username})
+    else :
+        return render(request, 'index.html')
 def draft(request):
     return render(request, "draft.html")
 def border(request):
@@ -21,25 +25,49 @@ def button(request):
     return render(request, "button.html")
 def text(request):
     return render(request, "text.html")
-def store(request):
-    return render(request, "store.html")
+# def store(request):
+#     return render(request, "store.html")
 def store(request):
     drones = Drone.objects.all()
-    return render(request, 'store.html', {'drones': drones})
-
+    username = request.session.get('username')
+    if username:
+        return render(request, 'store.html', {'drones': drones,'username': username})
+    else :
+        return render(request, 'store.html', {'drones': drones})
+    
 def store_filter(request):
     category = request.GET.get('category', '')
     if category == '':
         drones_filter = Drone.objects.all()
     else:
         drones_filter = Drone.objects.filter(category=category)
-    return render(request, 'store.html', {'drones': drones_filter})
+
+    username = request.session.get('username')
+    if username:
+        return render(request, 'store.html', {'drones': drones_filter,'username': username})
+    else:
+        return render(request, 'store.html', {'drones': drones_filter})
+    
 def chat(request):
-    return render(request,"chat.html")
+    username = request.session.get('username')
+    if username:
+        return render(request, 'chat.html', {'username': username})
+    else:
+        return render(request,"chat.html")
+    
 def profile(request):
-    return render(request, "profile.html")
+    username = request.session.get('username')
+    if username:
+        return render(request, 'profile.html', {'username': username})
+    else:
+        return render(request, "profile.html")
+    
 def gooddetail(request):
-    return render(request,"gooddetail.html")
+    username = request.session.get('username')
+    if username:
+        return render(request, 'gooddetail.html', {'username': username})
+    else:
+        return render(request, "gooddetail.html")
 def register(request):
     return render(request, "User/register.html")
 def Welcome(request):

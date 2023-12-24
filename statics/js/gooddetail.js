@@ -19,12 +19,13 @@ setRating = function (rating) {
 
 var rentNowButton = document.getElementById('rentNowButton');
 
-console.log(rentNowButton);
+// console.log(rentNowButton);
 // 添加点击事件处理函数
 rentNowButton.addEventListener('click', function () {
-    // 设置跳转的页面 URL
-    var targetPageUrl = '../profile';  // 替换为你实际的目标页面 URL
-    console.log('Button clicked');
-    // 跳转到目标页面
-    window.location.href = targetPageUrl;
+    var confirmation = confirm('确定要执行操作吗？');
+    if (confirmation) {
+        window.location.href = '../profile';
+    } else {
+        console.log('用户取消了操作');
+    }
 });

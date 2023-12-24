@@ -508,7 +508,7 @@ body {
 
 @keyframes pieChart {
   100% {
-    stroke-dashoffset: 0;
+    stroke-dashoffset: 235;
   }
 }
 .counter {
@@ -528,7 +528,7 @@ body {
   margin-top: auto;
   margin-right: 0;
   color: #fff;
-  font-size: 13px;
+  font-size: 15px;
   cursor: pointer;
 }
 
@@ -946,7 +946,7 @@ body {
     flex-wrap: wrap;
   }
   .first-box .cards-wrapper {
-    width: 60%;
+    width: 67%;
     max-width: none;
     margin: 20px 0;
   }
@@ -956,7 +956,7 @@ body {
   }
   .first-box .account-wrapper {
     max-width: none;
-    width: calc(40% - 20px);
+    width: calc(33% - 20px);
     margin: 20px 0 20px 20px;
   }
 
@@ -1064,7 +1064,6 @@ body {
   -webkit-animation: top 1s var(--delay) both;
           animation: top 1s var(--delay) both;
 }
-
 
 /*添加button*/
 .Btn {

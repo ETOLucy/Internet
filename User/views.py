@@ -49,6 +49,7 @@ def login(request):
         try:
             user = Users.objects.get(username=username)
             if password == user.password:
+                request.session['username'] = user.username
                 return redirect('../../index')
 
             else:
