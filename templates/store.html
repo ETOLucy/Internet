@@ -26,6 +26,7 @@
       <a href="{% url 'store_filter' %}?category=表演">表演</a>
       <a href="{% url 'store_filter' %}?category=农业">农业</a>
       <a href="{% url 'store_filter' %}?category=摄影">摄影</a>
+      <a href="{% url 'store_filter' %}?category=监测">监测</a>
     </nav>
   </header>
   <main>
@@ -38,9 +39,11 @@
               <div class="txt">
                 <h4>{{ drone.name }}</h4>
                 <div class="top">
-                  <span></span><p class="tag">{{ drone.category }}</p><span></span>
+                  <span></span>
+                  <p class="tag">{{ drone.category }}</p>
+                  <!-- <span></span> -->
                   
-                  <img src="{% static 'images/摄影.svg' %}">
+                  <!-- <img src="{% static 'images/摄影.svg' %}"> -->
                 </div>
                 <p class="explain">{{ drone.explain }}</p>
                 <p class="ps">{{ drone.ps }}</p>
