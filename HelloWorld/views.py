@@ -154,7 +154,8 @@ def submit_order(request):
                 #     # 其他订单信息...
                 #     price=price,
                 # )
-                return JsonResponse({'status': 'success', 'message': 'Payment processed successfully'+data['productId']+data['property1']})
+                # messages.success(request,"支付成功！")
+                return JsonResponse({'status': 'success', 'message': 'Payment processed successfully'})
             
             else:
                 return JsonResponse({'status': 'error', 'message': '余额不足'})

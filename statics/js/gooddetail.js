@@ -55,7 +55,7 @@ rentNowButton.addEventListener('click', function () {
             .then(data => {
                 console.log('Success:', data);
                 // 在成功的回调中执行跳转或其他操作
-                // window.location.href = '../profile';
+                window.location.href = '../profile';
             })
             .catch((error) => {
                 console.error('Error:', error);
