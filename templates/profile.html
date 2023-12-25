@@ -291,10 +291,10 @@
           <div class="title">实时进度</div>
           <div class="discount-wrapper">
             <div class="discount-info">
-              <div class="subtitle">库存准备:</div>
-              <div class="subtitle-count dist">1 / 10 物品</div>
+              <div class="subtitle">已完成:</div>
+              <div class="subtitle-count dist" id="complished">{{now.complished}}</div>
               <div class="subtitle">交付计划:</div>
-              <div class="subtitle-count">20 天后</div>
+              <div class="subtitle-count" id="require_days">{{now.require_days}}</div>
             </div>
             <div class="discount-chart">
               <div class="circle">
@@ -563,7 +563,7 @@
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                 <path d="M16 2v4M8 2v4M3 10h18" />
               </svg>
-              订单信息
+              历史进度
               <span class="today">Today</span>
             </div>
             <div class="cards-header-date">
@@ -589,11 +589,11 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>Time</th>
-                  <th>Goods Name</th>
-                  <th>Battery Capacity</th>
-                  <th>Battery Capacity</th>
-                  <th>Quantity</th>
+                  <th>id</th>
+                  <th>name</th>
+                  <th>开始时间</th>
+                  <th>结束时间</th>
+                  <th>对接人员</th>
                   <th>status</th>
                 </tr>
               </thead>
@@ -649,26 +649,29 @@
                     </div>
                   </td>
                 </tr> -->
+                {% for i in project %}
                 <tr>
-                  <td>
+                  <td id="id">
                     <input type="checkbox" id="row3" class="table-row">
-                    <span class="time is-wait">17.00</span>
+                    <!-- <span class="time is-wait">17.00</span> -->
+                    {{i.id}}
                   </td>
-                  <td>Alfred</td>
-                  <td>5 Main High</td>
-                  <td>Center Plaza</td>
-                  <td>asdfghjkl</td>
-                  <td>
+                  <td id="project_name">{{i.project_name}}</td>
+                  <td id="st_time">{{i.st_time}}</td>
+                  <td id="ed_time">{{i.ed_time}}</td>
+                  <td id="chat_name">{{i.chat_name}}</td>
+                  <td id="status">
                     <div class="status is-wait"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" class="feather feather-loader">
                         <path
                           d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
                       </svg>
-                      Waiting
+                      {{i.status}}
                     </div>
                   </td>
                 </tr>
+                {% endfor %}
               </tbody>
             </table>
           </div>
@@ -696,7 +699,7 @@
             </div>
             <div class="credit-money is-active">+$3.945</div>
           </div>
-          <div class="credit-wrapper">
+          <!-- <div class="credit-wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="background-color:#1f2755">
               <path xmlns="http://www.w3.org/2000/svg"
                 d="M488.727 66.494H23.273C10.42 66.494 0 76.914 0 89.767v332.466c0 12.853 10.42 23.273 23.273 23.273h465.454c12.853 0 23.273-10.42 23.273-23.273V89.767c0-12.853-10.42-23.273-23.273-23.273z"
@@ -716,8 +719,8 @@
               <div class="credit-status">Account Deposit</div>
             </div>
             <div class="credit-money is-active">+$3.00</div>
-          </div>
-          <div class="credit-wrapper">
+          </div> -->
+          <!-- <div class="credit-wrapper">
             <svg viewBox="0 0 504 504" style="background-color: #046fcf">
               <path xmlns="http://www.w3.org/2000/svg" fill="#fff" data-original="#2fabf7"
                 d="M43.2 207.6h17.6L52 185.2z" />
@@ -772,7 +775,7 @@
               <div class="credit-status">Payment Waiting</div>
             </div>
             <div class="credit-money is-wait">+$53.25</div>
-          </div>
+          </div> -->
           <div class="credit-wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 469.351 469.351" style="background-color: #0365b3">
               <path xmlns="http://www.w3.org/2000/svg"

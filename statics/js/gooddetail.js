@@ -55,6 +55,8 @@ rentNowButton.addEventListener('click', function () {
             .then(data => {
                 console.log('Success:', data);
                 // 在成功的回调中执行跳转或其他操作
+                var confirmation = confirm('支付成功！');
+
                 window.location.href = '../profile';
             })
             .catch((error) => {

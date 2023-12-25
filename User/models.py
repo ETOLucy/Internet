@@ -23,3 +23,15 @@ class Bank_card(models.Model):
     def bind_card(cls, user, card_name, balance = 10000000.00):
         bank_card, created = cls.objects.get_or_create(user=user, card_name=card_name, default={'balance': balance})
         return bank_card, created
+
+class Project(models.Model):
+    
+    project_name = models.CharField(max_length=20)
+    st_time = models.CharField(max_length=20)
+    ed_time = models.CharField(max_length=20)
+    chat_name = models.CharField(max_length=20)
+    status = models.CharField(max_length=20)
+
+class now_project(models.Model):
+    complished = models.CharField(max_length=20)
+    require_days = models.CharField(max_length=20)

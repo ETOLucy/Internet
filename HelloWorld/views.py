@@ -6,9 +6,10 @@ from Drone.models import Drone
 from django.http import HttpResponseRedirect, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from Drone.models import Drone
-from User.models import Order, Users
+from User.models import Order, Users, Project, now_project
 from decimal import Decimal
 import json
+
 
 
 
@@ -70,11 +71,13 @@ def chat(request):
         return render(request,"chat.html")
     
 def profile(request):
+    project = Project.objects.all()
+    now = now_project.objects.first()
     username = request.session.get('username')
     if username:
-        return render(request, 'profile.html', {'username': username})
+        return render(request, 'profile.html', {'now':now, 'project':project,'username': username})
     else:
-        return render(request, "profile.html")
+        return render(request, "profile.html",{'now':now, 'project':project})
     
 def gooddetail(request, drone_id):
     drone = get_object_or_404(Drone, pk=drone_id)
