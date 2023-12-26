@@ -23,6 +23,7 @@ h4 {
     font-size: 16px;
     margin: 0;
 }
+
 h5 {
     text-transform: uppercase;
     margin: 0;
@@ -40,7 +41,7 @@ a {
     color: #bbb;
 }
 
-.back{
+.back {
     position: absolute;
     top: 30px;
     left: 100px;
@@ -58,7 +59,7 @@ a {
     background-color: #0c1622;
 }
 
-.btn a{
+.btn a {
     color: #03e9f4;
 }
 
@@ -71,7 +72,8 @@ a {
         0 0 100px 0 #03e9f4;
     transition: all 2s linear;
 }
-.btn:hover a{
+
+.btn:hover a {
     color: #fff;
 }
 
@@ -170,6 +172,7 @@ a {
     padding: 40px;
     background-color: white;
     border-radius: 0 0 20px 20px;
+    height: 480px;
 }
 
 .product-details .title {
@@ -220,8 +223,12 @@ a {
     margin: 3em 0;
 }
 
+.product-details .size {
+    padding-right: 25px;
+}
+
 .product-details .controls>div {
-    flex: 1;
+    flex-shrink: 1;
 }
 
 .product-details .controls .option {
@@ -410,7 +417,7 @@ a {
         border-left: 2px solid rgba(187, 187, 187, 0.5);
         padding-left: 25px;
         padding-right: 25px;
-        width: 100px;
+        /* width: 100px; */
         margin-top: 0;
     }
 
